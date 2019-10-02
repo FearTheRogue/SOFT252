@@ -9,18 +9,20 @@ package practical_01;
  *
  * @author jbridgman2
  */
-public class Practical_01 {
+public class MyHeight {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int day = 22;
+        int centimetres = 100;
+        double inches;
+        double feet;
         
-       System.out.println("Hello World!");
-       System.out.println("The date today is " + day);
-       System.out.println(true);
-       System.exit(0);
+        inches = centimetres / 2.54;
+        feet = inches / 12;
+        
+        System.out.println(centimetres + "cm is " + feet + "ft");
     }
     
 }
