@@ -17,7 +17,10 @@ import static org.junit.Assert.*;
  * @author jbridgman2
  */
 public class StageResultsTest {
-    
+        private StageResults empty;
+        private StageResults full;
+        private StageResults halfFull;
+
     public StageResultsTest() {
     }
     
@@ -31,6 +34,18 @@ public class StageResultsTest {
     
     @Before
     public void setUp() {
+        // empty - object that starts with default values
+        empty = new StageResults();
+        
+        // full - object with 120 credits-worth of marks but no 
+        // initial stage2Average
+        full = new StageResults();
+        full.addModuleMark(120, 50.0);
+        
+        // halfFull - object with 60 credits worth of marks and 
+        // no initial stage2Average
+        halfFull = new StageResults();
+        halfFull.addModuleMark(60,50.0);
     }
     
     @After
