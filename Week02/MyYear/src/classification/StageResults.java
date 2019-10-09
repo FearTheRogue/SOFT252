@@ -20,6 +20,14 @@ public class StageResults {
         totalMarks += mark * (credits/10);
     }
     
+    public double calculateAverageSoFar(){
+        double average;
+        
+        average = totalMarks / (totalCredits / 10.0);
+        average = Math.round(average * 100) / 100.0;
+        
+        return average;
+    }
     /*
      * Returns the stage 2 average.
      */
