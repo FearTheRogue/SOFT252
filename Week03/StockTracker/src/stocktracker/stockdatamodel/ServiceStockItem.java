@@ -28,4 +28,9 @@ public class ServiceStockItem extends StockItem {
     public Boolean isInStock() {
         return true;
     }
+    
+    @Override
+    public StockType getItemType(){
+        return StockType.SERVICEITEM;
+    }
 }

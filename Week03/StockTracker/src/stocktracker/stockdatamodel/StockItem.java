@@ -8,12 +8,14 @@ package stocktracker.stockdatamodel;
  * Super class from which specialised stock item classes will inherit
  * @author rtucker
  */
-public class StockItem {
+public abstract class StockItem {
     
     protected String name = "UNKNOWN";
     protected Integer quantityInStock = 0;
     protected Double sellingPrice = 1000000.00;
     protected Double costPrice = 1000000.00;
+    
+    public abstract StockType getItemType();
     
     public StockItem(){
         
@@ -27,6 +29,8 @@ public class StockItem {
         this.name = name;
         this.quantityInStock = qty;
     }
+    
+    
     
     public Double getCostPrice() {
         return costPrice;
