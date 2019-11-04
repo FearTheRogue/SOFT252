@@ -9,15 +9,11 @@ package unidemo;
  *
  * @author James
  */
-public class UniDemo {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+public class Lecturer extends UniPeople implements ITeach {
     
-        
-        
+    public Lecturer (int id, String name){
+        this.id = id;
+        this.name = name;
     }
     
 }

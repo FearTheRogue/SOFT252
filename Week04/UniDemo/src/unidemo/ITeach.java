@@ -9,15 +9,7 @@ package unidemo;
  *
  * @author James
  */
-public class UniDemo {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-    
-        
-        
-    }
-    
+public interface ITeach {
+    void setCoursework(String coursework);
+    void teach();
 }
