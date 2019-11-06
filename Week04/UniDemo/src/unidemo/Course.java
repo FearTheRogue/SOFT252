@@ -10,17 +10,30 @@ package unidemo;
  * @author James
  */
 public class Course {
-       private String m_courseCode;
+       private String m_code;
        private Lecturer m_lecturer;
        private String m_coursework;
        private String m_room;
 
-    public String getM_courseCode() {
-        return m_courseCode;
+    public Course(String room, String code){
+        this.m_room = room;
+        this.m_code = code;
+    }   
+       
+    public Lecturer getLecturer(){
+        return m_lecturer;
+    }
+    
+    public void setLecturer(Lecturer lecturer){
+        this.m_lecturer = lecturer;
+    }
+    
+    public String getCode() {
+        return m_code;
     }
 
-    public void setM_courseCode(String m_courseCode) {
-        this.m_courseCode = m_courseCode;
+    public void setCode(String m_code) {
+        this.m_code = m_code;
     }
 
     public Lecturer getM_Lecturer() {
@@ -35,8 +48,8 @@ public class Course {
         return m_coursework;
     }
 
-    public void setM_Coursework(String m_Coursework) {
-        this.m_coursework = m_Coursework;
+    public void setM_Coursework(String m_coursework) {
+        this.m_coursework = m_coursework;
     }
 
     public String getM_Room() {

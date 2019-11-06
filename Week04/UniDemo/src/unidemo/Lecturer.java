@@ -9,11 +9,20 @@ package unidemo;
  *
  * @author James
  */
-public class Lecturer extends UniPeople implements ITeach {
+public class Lecturer extends UniPeople implements ITeach{
     
-    public Lecturer (int id, String name){
-        this.id = id;
-        this.name = name;
+    public Lecturer(int id, String name){
+        this.m_id = id;
+        this.m_name = name;
     }
     
+    @Override
+    public void teach(){
+        
+    }
+
+    @Override
+    public void setCoursework(String coursework) {
+        this.m_course.setM_Coursework(coursework);    
+    }
 }
