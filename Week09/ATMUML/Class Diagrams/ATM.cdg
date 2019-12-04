@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ATM">
+  <ClassDiagramComponents>
+    <Interface name="ATMState" package="" visibility="public" xPosition="338.0" yPosition="22.0">
+      <Methods>
+        <Method name="Waiting" returnType="void" visibility="public"/>
+        <Method name="NoCash" returnType="void" visibility="public"/>
+        <Method name="ReadCard" returnType="void" visibility="public"/>
+        <Method name="EnterPin" returnType="void" visibility="public"/>
+        <Method name="PinIncorrect" returnType="void" visibility="public"/>
+        <Method name="PinCorrect" returnType="void" visibility="public"/>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+        <Method name="MoneyAmountRequested" returnType="void" visibility="public"/>
+        <Method name="CheckMonetAmount" returnType="void" visibility="public"/>
+        <Method name="AvailiableMoney" returnType="void" visibility="public"/>
+        <Method name="CashOut" returnType="void" visibility="public"/>
+        <Method name="EjectCard" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Class name="ATM" package="" visibility="public" xPosition="17.0" yPosition="22.0">
+      <Fields>
+        <Field name="pinState" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setState" returnType="void" visibility="public"/>
+        <Method name="getState" returnType="void" visibility="public"/>
+        <Method name="insertCard" returnType="void" visibility="public"/>
+        <Method name="inputPin" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EnterPin" package="" visibility="public" xPosition="311.0" yPosition="432.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="enterPin" returnType="void" visibility="public"/>
+        <Method name="pinCorrect" returnType="void" visibility="public"/>
+        <Method name="pinIncorrect" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Idle" package="" visibility="public" xPosition="17.0" yPosition="220.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="Waiting" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="WithdrawMoney" package="" visibility="public" xPosition="674.0" yPosition="268.0">
+      <Fields>
+        <Field name="AvailiableMoney" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="AvailiableMoney" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PinCorrect" package="" visibility="public" xPosition="411.0" yPosition="628.0">
+      <Fields>
+        <Field name="pinCorrect" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="MoneyAmountRequested" returnType="void" visibility="public"/>
+        <Method name="CheckMoneyAmount" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PinIncorrect" package="" visibility="public" xPosition="203.0" yPosition="628.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="enterPin" returnType="void" visibility="public"/>
+        <Method name="EjectCard" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CalculateMoney" package="" visibility="public" xPosition="545.0" yPosition="418.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="CheckHasMoney" returnType="void" visibility="public"/>
+        <Method name="CashOut" returnType="void" visibility="public"/>
+        <Method name="EjectCard" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="HasNoMoney" package="" visibility="public" xPosition="728.0" yPosition="418.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Usuable" package="" visibility="public" xPosition="80.0" yPosition="349.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="" source="PinIncorrect" target="EnterPin" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="CalculateMoney" target="WithdrawMoney" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="WithdrawMoney" target="ATMState"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="EnterPin" target="ATMState"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Idle" target="ATMState"/>
+    <HasRelation name="Has-a" source="ATM" target="ATMState" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="HasNoMoney" target="WithdrawMoney" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Usuable" target="ATMState"/>
+    <UseRelation name="" source="PinCorrect" target="EnterPin" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
